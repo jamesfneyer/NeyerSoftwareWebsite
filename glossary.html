@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Neyer Software</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<style>
+.jumbotron{
+background-image: url();
+height: 30%;}
+</style>
+
+<body>
+
+    <!-- Navigation -->
+	<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="SenTest.html">SenTest&trade;</a>
+                    </li>
+                    <li>
+                        <a href="courseinformation.html">Course Information</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="papers.html">Papers</a>                        
+                    </li>
+                    <li class="active">
+                        <a href="glossary.html">Glossary</a>                       
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	</header>
+	
+	<div class="jumbotron text-center">
+	<h1>Glossary of Sensitivity Testing and Analysis Terms<h1>
+	</div>
+	
+	<div class="container">
+	
+	<h2>Definitions</h2>
+	<ul class="list-group">
+		
+			<li class="list-group-item">
+				<h3><span id="Accurate"></span></h3>
+				<b>Accurate</b>:
+				An accurate measurement is one that gives the correct value on the average, i.e. there is no bias. See also <a href="#Precise">precise.</a>				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="All-FireLevel"></span></h3>
+				<b>All-Fire Level</b>:
+				The minimum <a href="#StimulusLevel">stimulus level</a> (current, dose, energy, stress, voltage, etc.) that is sufficient to cause the device to function under a specific set of conditions. The All-Fire should be specified with both a <a href="#ProbabilityLevel">probability level</a> and a <a href="#ConfidenceLevel">confidence level</a>. A typical specification might 99.9% at 95% confidence. This specification means that there is a 95% confidence that at least 99.9% of the devices will function when supplied with the All-Fire level. See also <a href="#No-Fire">No-Fire.</a>				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="ASENT"></span></h3>
+				<b>ASENT</b>:
+				A software program commonly used to analyze the results of a <a href="#SensitivityTest">sensitivity test</a>. The <a href="#PopulationParameterEstimates">population parameter estimates</a> (<a href="#Mean">mean</a> and <a href="#StandardDeviation">standard deviation</a>) are calculated by computing the <a href="#MaximumLikelihoodEstimate">maximum likelihood estimates</a>. The <a href="#ConfidenceRegions">confidence regions</a> are calculated using asymptotic analysis that computes the curvature of the likelihood function at the <a href="#MaximumLikelihoodEstimate">maximum likelihood estimates</a>. The analysis is valid for sample sizes on the order of several hundred, but is often used for much smaller sample sizes.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="BrucetonAnalysis"></span></h3>
+				<b>Bruceton Analysis</b>:
+				A method of analyzing a <a href="#SensitivityTest">sensitivity test</a>. The Bruceton analysis method was invented by <a href="#DixonandMoon">Dixon and Mood (1948)</a> as a technique that would allow for simple analysis of  sensitivity tests. The test was designed for efficiency in hand calculation. The Bruceton analysis can ONLY be used on tests conducted according to the <a href="#BrucetonTest">Bruceton Test</a> method. When the analysis method is applicable, it has similar precision to the asymptotic analysis of <a href="#ASENT">ASENT.</a>				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="BrucetonTest"></span></h3>
+				<b>Bruceton Test</b>:
+				Another name for the <a href="#Up-and-DownTest">Up-and-Down Test</a>. This test method was invented by <a href="#DixonandMoon">Dixon and Mood (1948)</a> along with the <a href="#BrucetonAnalysis">Bruceton Analysis</a> method to allow for simple analysis of sensitivity tests. The Bruceton name is mainly used by people who test physical objects, while the Up-and Down name is mainly used by biologists. The Bruceton test is a method for choosing the <a href="#StressLevel">stress levels</a> in a sequential <a href="#SensitivityTest">sensitivity test</a>. The method requires the test operator to specify two <a href="#TestParameters">test parameters</a>, a first <a href="#StimulusLevel">stimulus level</a> and a step size.  Subsequent tests are at a level one step size lower or higher than the previous test level depending on whether the previous test resulted in a response or a non-response. For best results the first stimulus level should be chosen at the <a href="#Population">population</a> <a href="#Mean">mean</a> and the step size should be chosen as the population <a href="#StandardDeviation">standard deviation</a>. The <a href="#TestEfficiency">test efficiency</a> is very dependent on choosing good test parameters. Because the test parameters are dependent on the unknown population parameters, the Bruceton test is not efficient. See also <a href="#D-Optimal">D-Optimal</a> and <a href="#LanglieTest">Langlie Tests</a>.
+				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="ConfidenceInterval"></span></h3>
+				<b>Confidence Interval</b>:
+				A <a href="#Statistic">statistic</a> constructed from <a href="#Sample">sample</a> data to provide an interval <a href="#Estimate">estimate</a> of a <a href="#PopulationParameter">population parameter</a>. For example, the average of a sample is generally a good estimate of the <a href="#Population">population</a> <a href="#Mean">mean</a>. However, another sample chosen from the same sample would almost certainly have a different value. If the <a href="#SampleSize">sample size</a> is large enough, both of these estimates should be close to each other and the population mean. The confidence interval provides an interval or range of values around the estimate. For one parameter, such as the <a href="#Mean">mean</a>, <a href="#StandardDeviation">standard deviation</a>, or <a href="#ProbabilityLevel">probability level</a>, the most common intervals are or two sided (i.e. the statistic is between the lower and upper limit) and one sided (i.e. the statistic is smaller or larger than the end point). For two or more parameters, a confidence region, the generalization of a confidence interval, can take on arbitrary shapes. For sensitivity testing, the smallest confidence regions are oval shapes.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="ConfidenceLevel"></span></h3>
+				<b>Confidence Level</b>:
+				The probability that a confidence interval or region will contain the true parameters is given by the confidence level. A 95% confidence interval will contain the true parameters 95% of the time on average. Usually a confidence level of 95% or greater is considered <a href="#StatisticallySignificant">statistically significant</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="CriticalStimulusLevel"></span></h3>
+				<b>Critical Stimulus Level</b>:
+				The <a href="#StimulusLevel">stimulus level</a> (current, dose, energy, stress, voltage, etc.) that is just sufficient to cause a <a href="#Response">response</a> in the specimen tested. If the specimen is subjected to a stimulus level below its critical stimulus level it will not respond. If it is subjected to a stimulus level above its critical stimulus level it will respond.</th>				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="D-OptimalTest"></span></h3>
+				<b>D-Optimal Test</b>:
+				A method for choosing the <a href="#StimulusLevel">stimulus levels</a> in a <a href="#SensitivityTest">sensitivity test</a>. This test method was invented by Neyer (<a href="#Barry1989">1989</a>, <a href="#Barry1994">1994</a>) as a method that would efficiently calculate the <a href="#PopulationParameterEstimates">population parameter estimates</a> (estimates of the <a href="#PopulationParameter">population parameters</a> such as <a href="#Mean">mean</a> and <a href="#StandardDeviation">standard deviation</a>). The method requires the test operator to specify three <a href="#TestParameters">test parameters</a>, a lower and upper range for the guess of the <a href="#Mean">mean</a> and a guess for the <a href="#StandardDeviation">standard deviation</a>. Because these guesses are only used in the initial search algorithm, errors in these guesses do not have a major effect on the <a href="#TestEfficiency">test efficiency</a>. The test algorithm has four distinct phases. It uses an initial search algorithm to close in on the region of mixed response then uses a non analytical technique to determine the D-Optimal test points. These test points are the <a href="#StimulusLevel">stimulus levels</a> that maximize the information matrix.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Dud"></span></h3>
+				<b>Dud</b>:
+				A device that will not function, no matter what the <a href="#StimulusLevel">stimulus level</a> is. This term is most often used in connection with explosive components. Sometimes also called a reject component.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Estimate"></span></h3>
+				<b>Estimate</b>:
+				Often also called a point estimate, it is the guess of the true value of a <a href="#PopulationParameter">population parameter</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="LanglieTest"></span></h3>
+				<b>Langlie Test</b>:
+				A method for choosing the <a href="#StimulusLevel">stimulus levels</a> in a <a href="#SensitivityTest">sensitivity test</a>. This test method was invented by <a href="#Langlie1965">Langlie (1965)</a> as a replacement for the <a href="#BrucetonTest">Bruceton Test</a>. The method requires the test operator to specify a upper and lower test limit. The first stimulus level is the average of the two limits. Subsequent levels are found by averaging the last test level with a previous level or end point according to the rule developed by Langlie. The efficiency of the Langlie test is not as dependent on the initial choice of test parameters as is the <a href="#BrucetonTest">Bruceton Test</a>, but is more dependent than the <a href="#D-OptimalTest">D-Optimal Test</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="LD50Test"></span></h3>
+				<b>LD50 Test</b>:
+				Another name for a <a href="#SensitivityTest">sensitivity test</a>. This name is most often used in <a href="#ToxicologicalTests">toxicological tests</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="LethalDose"></span></h3>
+				<b>Lethal Dose 50% (LD50)</b>:
+				The dose that is just lethal or deadly to 50% of the specimen. This terminology is used in biological experiments. It is the same as the <a href="#MedianLethalDose">median lethal dose</a> or the median.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="LikelihoodFunction"></span></h3>
+				<b>Likelihood Function</b>:
+				The probability of obtaining the results obtained as a function of the <a href="#PopulationParameter">population parameters.</a>
+				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="LikelihoodRatioAnalysis"></span></h3>
+				<b>Likelihood Ratio Analysis</b>:
+				A method of computing confidence regions. The method entails computing ratios of the <a href="#LikelihoodFunction">likelihood function</a> at arbitrary parameters divided by the value at the <a href="#MaximumLikelihoodEstimate">maximum likelihood estimates.</a>				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="LogitCurve"></span></h3>
+				<b>Logit Curve</b>:
+				A curve of a probability distribution. The distribution looks somewhat like the <a href="#NormalCurve">normal curve</a>, but with tails that do not fall off as fast at plus and minus infinity.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="MaximumLikelihoodEstimate"></span></h3>
+				<b>Maximum Likelihood Estimate</b>:
+				The value of a <a href="#PopulationParameter">population parameter</a> that yields the maximum value of the <a href="#LikelihoodFunction">likelihood function</a>. The MLE can be determined by finding the value at which the derivative of the <a href="#LikelihoodFunction">likelihood function</a> is zero.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Mean"></span></h3>
+				<b>Mean</b>:
+				The average value of a <a href="#Population">population</a>. This value is often symbolized by the Greek letter <a href="#Mu">mu</a>, &#956;. It also means the average value of a <a href="#Sample">sample</a>, in which case the symbol M is used. The sample mean is most often a good <a href="#Estimate">estimate</a> of the population mean.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Median"></span></h3>
+				<b>Median</b>:
+				The 50% point or middle value of the population. If the values are ordered from smallest to largest, the median would be the middle value.				
+			</li>
+			<li class="list-group-item">	
+				<h3><span id="MedianLethalDose"></span></h3>
+				<b>Median Lethal Dose</b>:
+				The dose that is just lethal to 50% of the specimen. This terminology is used in biological experiments. It is the same as the <a href="#LD50">LD50</a> or the median.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Mu"></span></h3>
+				<b>Mu</b>:
+				The symbol &#956; is often used to symbolize the <a href="#Mean">mean</a> of the <a href="#Population">population</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="NeyerAnalysis"></span></h3>
+				<b>Neyer Analysis</b>:
+				A method of analyzing the results of a <a href="#SensitivityTest">sensitivity test</a>. The <a href="#PopulationParameterEstimates">population parameter estimates</a> (<a href="#Mean">mean</a> and <a href="#StandardDeviation">standard deviation</a>) are calculated by computing the <a href="#MaximumLikelihoodEstimate">maximum likelihood estimates</a>. The confidence regions are calculated using a likelihood ratio analysis which computes contours of the likelihood function. The analysis is valid for sample sizes on the order of twenty or more but can be used for smaller sample sizes.				
+			</li>
+			<li class="list-group-item">	
+				<h3><span id="NeyerTest"></span></h3>
+				<b>Neyer Test</b>:
+				Also known as the Neyer <a href="#D-OptimalTest">D-Optimal Test</a>. A method for choosing the <a href="#StressLevel">stress levels</a> in a <a href="#SensitivityTest">sensitivity test</a> that maximizes the information about both the <a href="#Mean">mean</a> and <a href="#StandardDeviation">standard deviation</a> of the <a href="#Population">population</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="No-FireLevel"></span></h3>		
+				<b>No-Fire Level</b>:
+				The maximum current, dose, energy, stress, voltage, etc. that is not sufficient to cause the device to function under a specific set of conditions. The No-Fire should be specified with both a <a href="#ProbabilityLevel">probability level</a> and a <a href="#ConfidenceLevel">confidence level</a>. A typical specification might 10<sup>-6</sup> at 95% confidence. This specification means that there is a 95% confidence that no more than one in 1 million of the devices will function when supplied with the All-Fire level. See also <a href="#All-Fire">All-Fire</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="NormalCurve"></span></h3>		
+				<b>Normal Curve</b>:
+				A curve of a probability distribution. It is also sometimes called a bell shaped curve. The curve is completely specified by its <a href="#Mean">mean</a> and <a href="#StandardDeviation">standard deviation</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Population"></span></h3>			
+				<b>Population</b>:
+				The set of individuals or objects having some common observable characteristics.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="PopulationParameter"></span></h3>
+				<b>Population Parameter</b>:
+				A parameter that can be used to describe a population. Some examples of population parameters are the <a href="#Mean">mean</a>, <a href="#StandardDeviation">standard deviation</a>, and <a href="#ProbabilityLevel">probability level</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="PopulationParameterEstimates"></span></h3>
+				<b>Population Parameter Estimates</b>:
+				<a href="#Estimate">Estimates</a> of the <a href="#PopulationParameter">population parameters</a>. Estimates can be determined in a number of ways. If an estimate is computed entirely from the test result of a sample, then the estimate is called a <a href="#Statistic">statistic</a>.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Precise"></span></h3>
+				<b>Precise</b>:
+				A precise measurement is one that has small scatter about the average value. See also <a href="#Accurate">accurate.</a>			
+			</li>
+			<li class="list-group-item">
+				<h3><span id="ProbabilityLevel"></span></h3>
+				<b>Probability Level</b>:
+				A <a href="#PopulationParameter">population parameter</a> that corresponds to a given percentile of the distribution. For example, the 90% probability level is the level for which 90% of the population has smaller value and 10% has a larger value.			
+			</li>
+			<li class="list-group-item">
+				<h3><span id="ProbitAnalysis"></span></h3>
+				<b>Probit Analysis</b>:
+				A graphical method of analyzing<a href="#SensitivityTest"> sensitivity tests</a>. If multiple tests are conducted at several <a href="#StimulusLevel">stimulus levels</a>, then those that result in mixed response can be graphed on probability paper as a function of stimulus level. A straight line is fit to the graph. The slope of the line is related to the <a href="#StandardDeviation">standard deviation</a>, and the mid point of the line gives the <a href="#Mean">mean</a>. Often a transformation of the stimulus levels, such as taking the log of the stimulus levels results in data that is a closer fit to a straight line.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="RandomSample"></span></h3>
+				<b>Random Sample</b>:
+				A <a href="#Sample">sample</a> of a <a href="#Population">population</a> that has the property that each item has an equal chance of being selected, and in which the chance of one item being selected does not affect the selection of any other item. Random samples are often used to ensure that the sample is representative of the population. Sometimes a sample that is not totally random but distributed uniformly with respect to nuisance parameters has desirable properties.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Response"></span></h3>
+				<b>Response</b>:
+				A change in the specimen from its initial state. For explosive components, a response is most often the successful function. For biological specimen, a response if often a death for <a href="#ToxicologicalTests">toxicological tests</a> or a cure for pharmacological tests. For a true <a href="#SensitivityTest">sensitivity test</a>, the response is binary, i.e. a clearly defined YES or NO to the question: "Did the specimen change?"				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Robbins-MonroTest"></span></h3>
+				<b>Robbins-Monro Test</b>:
+				A method for choosing the <a href="#StimulusLevel">stimulus levels</a> in a <a href="#SensitivityTest">sensitivity test</a>. This method is similar to the <a href="#BrucetonTest">Bruceton Test</a> in that a first level and a step size are specified. Unlike the Bruceton test, the step size decreases by 1/N so that the stimulus levels converge to the population mean.				
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Sample"></span></h3>			
+				<b>Sample</b>:
+				Any subset of a <a href="#Population">population</a>. A sample is often chosen for measurement because it is easier to determine the properties of a sample than the entire population.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="SampleSize"></span></h3>			
+				<b>Sample Size</b>:
+				The number of items in a <a href="#Sample">sample</a>. In general, a larger sample size yields better statistical information than a smaller sample size.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="SensitivityAnalysis"></span></h3>			
+				<b>Sensitivity Analysis</b>:
+				A method of analyzing the results of a <a href="#SensitivityTest">sensitivity test</a>. Because a sensitivity test does not provide individual measures of the <a href="#CriticalStimulusLevel">critical stress levels</a> of members of the <a href="#Sample">sample</a>, it is not possible to compute an estimate of the <a href="#Mean">mean</a> in the normal manner of adding up the values and dividing by the <a href="#SampleSize">sample size</a>. It is similarly difficult to calculate the estimate of the <a href="#StandardDeviation">standard deviation</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="SensitivityTest"></span></h3>			
+				<b>Sensitivity Test</b>:
+				A test method for estimating continuous parameters that can not be measured in practice. For example, each explosive specimen has a threshold. The specimen will detonate if and only if an applied <a href="#StimulusLevel">stimulus level</a> exceeds this value. Since there is no way to determine the threshold of an individual, specimens are tested at various levels to determine <a href="#Parameter">parameters</a> of the <a href="#Population">population</a>. Repeated testing of any one sample is not possible, because the stimulus that is not sufficient to cause explosion nevertheless will generally damage the specimen.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Sigma"></span></h3>			
+				<b>Sigma</b>:
+				The symbol 	&#963; is often used to symbolize the <a href="#StandardDeviation">standard deviation</a> of the <a href="#Population">population</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="StandardDeviation"></span></h3>			
+				<b>Standard Deviation</b>:
+				A measure of the variability of the <a href="#Population">population</a>. This value is often symbolized by the Greek letter <a href="#Sigma">sigma</a>, &#963;. It also represents the variability of a <a href="#Sample">sample</a>, in which case the symbol S is used. The sample standard deviation is most often a good <a href="#Estimate">estimate</a> of the population standard deviation. If the population follows a <a href="#NormalCurve">normal distribution</a>, then approximately 68% of the sample will be within one standard deviation of the <a href="#Mean">mean</a> and 95% will be within 2 standard deviations. The square of the standard deviation is called the variance.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Statistic"></span></h3>			
+				<b>Statistic</b>:
+				Anything that can be computed entirely from the properties of a <a href="#Sample">sample</a> of data. The term is most often used for <a href="#PopulationParameter">population parameters</a> such as the sample <a href="#Mean">mean</a> and sample <a href="#StandardDeviation">standard deviation</a>, although minimum and vaximum values and histograms are also statistics.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="StatisticallySignificant"></span></h3>			
+				<b>Statistically Significant</b>:
+				Something is statistically significant if it is unlikely that the event would occur by change less than a specific proportion of the time. If no specific proportion is given, the 5% level is assumed.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="StimulusLevel"></span></h3>			
+				<b>Stimulus Level</b>:
+				The current, dose, energy, stress, voltage, etc. to which the specimen under test is subjected. See also the <a href="#CriticalStimulusLevel">Critical Stimulus Level</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="TestEfficiency"></span></h3>			
+				<b>Test Efficiency</b>:
+				How well a statistical test is able to extract information from a sample. Because the test efficiency for <a href="#SensitivityTest">sensitivity tests</a> is a strong function of the relationship between the test levels, the ability of different tests methods to extract <a href="#Precise">precise</a> and <a href="#Accurate">accurate</a> estimates varies widely. A more efficient test requires a smaller <a href="#SampleSize">sample size</a> to obtain the same result as a less efficient test.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="TestParameters"></span></h3>
+				<b>Test Parameters</b>:
+				These parameters are used to determine the starting values when conducting sensitivity tests. The efficiency of the test depends on a proper choice of the test parameters.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="ToxicologicalTests"></span></h3>
+				<b>Toxicological Tests</b>:
+				Tests used to determine the potential toxic effects of chemicals and other agents on human health and the environment. Because it is often impossible to measure the threshold of the toxic level, these tests are often <a href="#SensitivityTest">sensitivity tests</a>.
+			</li>
+			<li class="list-group-item">
+				<h3><span id="Up-and-DownTest"></span></h3>
+				<b>Up-and-Down Test</b>:
+				Another name for the <a href="#BrucetonTest">Bruceton Test</a>.
+			</li>
+			
+	</ul>
+		<h2>References</h2>
+		<ul class="list-group">
+			<h3><span id="DixonandMoon"></span></h3>
+			<li class="list-group-item">J. W. Dixon and A. M. Mood (1948), "A Method for Obtaining and Analyzing Sensitivity Data," Journal of the American Statistical Association, 43, pp. 109-126.</li>
+			<li class="list-group-item">Maurice G. Kendall and Alan Stuart (1967), The Advanced Theory of Statistics, Volume 2, Second Edition, New York: Hafner Publishing Company.</li>
+			<h3><span id="Langlie1965"></span></h3>
+			<li class="list-group-item">H. J. Langlie (1965), "A Reliability Test Method For "One-Shot'" Items," Technical Report U-1792, Third Edition, Aeronutronic Division of Ford Motor Company, Newport Beach, CA.</li>
+			<h3><span id="Barry1989"></span></h3>
+			<li class="list-group-item">Barry T. Neyer (1989), "More Efficient Sensitivity Testing," Technical Report MLM-3609, EG&G Mound Applied Technologies, Miamisburg, OH.</li>
+			<li class="list-group-item">Barry T. Neyer (1992), Analysis of Sensitivity Tests, MLM-3736, EG&G Mound Applied Technologies, Miamisburg, Ohio.</li>
+			<h3><span id="Barry1994"></span></h3>
+			<li class="list-group-item">Barry T. Neyer (1994), A D-Optimality Based Sensitivity Test, Technometrics, 36, PP 61-70.</i>
+			<li class="list-group-item">Barry T. Neyer (1994a), Sensitivity Testing and Analysis, Proceedings of the Sixteenth International Pyrotechnics Seminar, Jönköping, Sweden, April.</li>
+			<li class="list-group-item">Herbert Robbins and Sutton Monro (1951), "A Stochastic Approximation Method Method," Annals of Mathematical Statistics, 22, pp. 400-407.</li>
+			<li class="list-group-item">S. D. Silvey (1980), Optimal Design, London: Chapman and Hall.</li>
+	</ul>
+	<hr>
+        <!-- Footer -->
+     <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Neyer Software LLC 2017</p>
+                </div>
+            </div>
+     </footer>
+	</div>
+    <!-- /.container -->
+	
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+</body>
+
+</html>
